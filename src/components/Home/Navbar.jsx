@@ -1,33 +1,56 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const activeLink = "text-blue-700 font-bold border-b-2 border-blue-700";
+  const activeLink =
+    "text-indigo-500 font-bold underline underline-offset-8 text-base";
 
   const navLinks = (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? activeLink : "")}
+        className={({ isActive }) =>
+          isActive
+            ? activeLink
+            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
+        }
         to="/"
       >
         Home
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? activeLink : "")}
-        to="/logIn"
+        className={({ isActive }) =>
+          isActive
+            ? activeLink
+            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
+        }
+        to="/allCraft"
       >
-        Login
+        All Craft
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? activeLink : "")}
-        to="/register"
+        className={({ isActive }) =>
+          isActive
+            ? activeLink
+            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
+        }
+        to="/addCraft"
       >
-        Register
+        Add Craft
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? activeLink
+            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
+        }
+        to="/myCraftList"
+      >
+        My Craft Lists
       </NavLink>
     </>
   );
 
   return (
-    <div className="navbar">
+    <div className="navbar bg-gray-50 shadow-md mb-6 p-2 px-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,15 +76,28 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link className="text-xl">DrawingDen</Link>
+        <Link className="text-2xl font-semibold transition-all hover:scale-105">
+          DrawingDen
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4">{navLinks}</ul>
+        <ul className="menu menu-horizontal px-1 text-base space-x-4">
+          {navLinks}
+        </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn bg-blue-500 hover:bg-blue-700 rounded-full px-6 text-base text-white">
+      <div className="navbar-end space-x-3">
+        <Link
+          to="/logIn"
+          className="btn bg-blue-500 hover:bg-indigo-500 rounded-full px-9 text-base text-white"
+        >
           Log In
-        </a>
+        </Link>
+        <Link
+          to="/register"
+          className="btn bg-indigo-500 hover:bg-blue-500 rounded-full px-9 text-base text-white"
+        >
+          Register
+        </Link>
       </div>
     </div>
   );
