@@ -3,7 +3,7 @@ import registerImg from "./../../assets/images/register.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { useForm } from "react-hook-form";
-import { data } from "autoprefixer";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -11,11 +11,11 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const handleRegister = (formData) => {
-    const { fullName, email, photoUrl, password } = formData;
+    const { email, password } = formData;
 
     createUser(email, password)
       .then((result) => {
@@ -29,6 +29,13 @@ const Register = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Registration Successful !",
+                icon: "success",
+                confirmButtonText: "Okay",
+              });
+            }
           });
       })
       .catch((error) => {
@@ -78,7 +85,7 @@ const Register = () => {
                   {...register("password", { required: true })}
                 />
               </div>
-              <button className="block w-full p-3 text-center rounded-sm bg-blue-700 text-white uppercase">
+              <button className="btn w-full text-base rounded-md bg-blue-700 text-white uppercase">
                 Register
               </button>
             </form>

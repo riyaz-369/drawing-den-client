@@ -1,21 +1,50 @@
 import { Link } from "react-router-dom";
 import signUpImg from "./../../assets/images/sign-up.svg";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
+  const { logInUser } = useContext(AuthContext);
+
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm();
+
+  const handleLogIn = (logInFormData) => {
+    const { email, password } = logInFormData;
+
+    logInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          title: "Login Successful !",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <section className=" bg-gray-50">
       <div className="max-w-7xl mx-auto my-12 flex justify-between items-end">
         <div className="pb-8 w-1/3 space-y-3">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block">
                 Email
               </label>
               <input
-                type="text"
-                name="Email"
+                type="email"
                 placeholder="Enter Your Email"
                 className="w-full px-4 py-3 rounded-md border-2"
+                {...register("email", { required: true })}
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -24,9 +53,9 @@ const LogIn = () => {
               </label>
               <input
                 type="password"
-                name="password"
                 placeholder="Password"
                 className="w-full px-4 py-3 rounded-md border-2"
+                {...register("password", { required: true })}
               />
               <div className="flex justify-end text-xs ">
                 <a rel="noopener noreferrer" href="#">
