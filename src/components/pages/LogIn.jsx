@@ -4,7 +4,7 @@ const LogIn = () => {
   return (
     <section className="max-w-7xl mx-auto my-12 flex justify-between items-end border-2 bg-gray-50 bg-opacity-60 rounded-md">
       <div className="w-full max-w-md p-8 space-y-3">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+        <h1 className="text-2xl font-semibold mb-6">Login Your Account</h1>
         <form noValidate="" action="" className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block">
