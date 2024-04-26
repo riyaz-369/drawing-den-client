@@ -3,6 +3,7 @@ import registerImg from "./../../assets/images/register.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { useForm } from "react-hook-form";
+import { data } from "autoprefixer";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -19,6 +20,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(formData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
       })
       .catch((error) => {
         console.error(error.message);
