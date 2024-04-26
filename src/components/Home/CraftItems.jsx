@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CraftItems = () => {
   return (
     <div className=" w-96">
@@ -11,7 +13,9 @@ const CraftItems = () => {
         <h2 className="card-title">Life hack Lorem ipsum dolor sit</h2>
         <p>How to park car at your garage your car at your garage?</p>
         <div className="card-actions">
-          <button className="my-secondary-btn w-full">View Details</button>
+          <Link to="/artDetails">
+            <button className="my-secondary-btn w-full">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

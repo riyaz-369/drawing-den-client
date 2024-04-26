@@ -7,6 +7,7 @@ import Register from "../components/pages/Register";
 import AllCraft from "../components/pages/AllCraft";
 import AddCraft from "../components/pages/AddCraft";
 import MyCraftList from "../components/pages/MyCraftList";
+import ViewDetails from "../components/pages/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
         element: <AllCraft />,
       },
       {
-        path: "addCraft",
+        path: "/artDetails",
+        element: <ViewDetails />,
+      },
+      {
+        path: "/addCraft",
         element: <AddCraft />,
       },
       {
