@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
 import signUpImg from "./../../assets/images/sign-up.svg";
 
 const LogIn = () => {
   return (
     <section className=" bg-gray-50">
       <div className="max-w-7xl mx-auto my-12 flex justify-between items-end">
-        <div className="py-8 w-1/3 space-y-3">
-          <h1 className="text-2xl font-semibold mb-6">Login Your Account</h1>
+        <div className="pb-8 w-1/3 space-y-3">
           <form className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block">
@@ -34,8 +34,8 @@ const LogIn = () => {
                 </a>
               </div>
             </div>
-            <button className="block w-full p-3 text-center rounded-sm bg-blue-700 text-white">
-              Sign in
+            <button className="block w-full p-3 text-center rounded-sm bg-blue-700 text-white uppercase">
+              Log In
             </button>
           </form>
           <div className="flex items-center pt-4 space-x-1">
@@ -63,13 +63,19 @@ const LogIn = () => {
           </div>
           <p className="text-center">
             Dont have an account?
-            <a rel="noopener noreferrer" href="#" className="btn-link">
-              Sign up
-            </a>
+            <Link
+              to="/register"
+              className="btn-link font-bold hover:text-indigo-500 no-underline hover:underline"
+            >
+              Register
+            </Link>
           </p>
         </div>
-        <div className="">
-          <img src={signUpImg} alt="" />
+        <div>
+          <h1 className="text-3xl pl-28 font-semibold pb-4 pt-8">
+            Login Your Account
+          </h1>
+          <img className="w-[600px]" src={signUpImg} alt="" />
         </div>
       </div>
     </section>
