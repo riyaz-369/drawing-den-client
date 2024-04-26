@@ -86,16 +86,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end space-x-3">
-        <Link
-          to="/logIn"
-          className="btn bg-blue-500 hover:bg-indigo-500 rounded-full px-9 text-base text-white"
-        >
+        <Link to="/logIn" className="my-secondary-btn">
           Log In
         </Link>
-        <Link
-          to="/register"
-          className="btn bg-indigo-500 hover:bg-blue-500 rounded-full px-9 text-base text-white"
-        >
+        <Link to="/register" className="my-primary-btn">
           Register
         </Link>
       </div>
