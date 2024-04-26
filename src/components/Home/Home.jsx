@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import CategorySection from "./CategorySection";
 import CraftItems from "./CraftItems";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
       <Banner />
       <div className="max-w-7xl mx-auto my-24">
         <CraftItems />
+        <CategorySection />
       </div>
     </div>
   );

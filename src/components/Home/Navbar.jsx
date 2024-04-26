@@ -76,7 +76,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link className="text-2xl font-semibold transition-all hover:scale-105">
+        <Link className="text-2xl font-semibold transition-all duration-300 hover:scale-105">
           DrawingDen
         </Link>
       </div>

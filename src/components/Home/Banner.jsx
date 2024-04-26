@@ -18,9 +18,9 @@ const Banner = () => {
   return (
     <div>
       <Swiper
-        // autoplay={{
-        //   delay: 2500,
-        // }}
+        autoplay={{
+          delay: 2500,
+        }}
         spaceBetween={50}
         pagination={{
           clickable: true,

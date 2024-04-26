@@ -8,6 +8,7 @@ import AllCraft from "../components/pages/AllCraft";
 import AddCraft from "../components/pages/AddCraft";
 import MyCraftList from "../components/pages/MyCraftList";
 import ViewDetails from "../components/pages/ViewDetails";
+import UpdateCraft from "../components/pages/UpdateCraft";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/addCraft",
         element: <AddCraft />,
+      },
+      {
+        path: "/updateCraft",
+        element: <UpdateCraft />,
       },
       {
         path: "/myCraftList",
