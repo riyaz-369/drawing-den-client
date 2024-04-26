@@ -1,46 +1,69 @@
 import { Link } from "react-router-dom";
 import registerImg from "./../../assets/images/register.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, userProfile } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
 
   const handleRegister = (formData) => {
-    const { email, password } = formData;
+    const { fullName, email, photoUrl, password } = formData;
 
-    createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+    if (password.length < 6) {
+      toast.error("Length must be at least 6 character.");
+      return;
+    } else if (!/^(?=.*[A-Z])/.test(password)) {
+      toast.error("Password must have an uppercase letter");
+      return;
+    } else if (!/^(?=.*[a-z])/.test(password)) {
+      toast.error("Password must have an lowercase letter");
+      return;
+    } else {
+      createUser(email, password)
+        .then((result) => {
+          console.log(result.user);
 
-        fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(formData),
+          userProfile(fullName, photoUrl)
+            .then(() => {
+              // console.log(result);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(formData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.insertedId) {
+                Swal.fire({
+                  title: "Registration Successful !",
+                  icon: "success",
+                  confirmButtonText: "Okay",
+                });
+              }
+            });
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.insertedId) {
-              Swal.fire({
-                title: "Registration Successful !",
-                icon: "success",
-                confirmButtonText: "Okay",
-              });
-            }
-          });
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
+        .catch((error) => {
+          console.error(error.message);
+        });
+    }
   };
 
   return (
@@ -57,6 +80,9 @@ const Register = () => {
                   className="w-full px-4 py-3 rounded-md border-2"
                   {...register("fullName", { required: true })}
                 />
+                {errors.fullName && (
+                  <span className="text-sm text-red-500">Name is required</span>
+                )}
               </div>
               <div className="space-y-1 text-sm">
                 <label className="block">Email</label>
@@ -66,6 +92,11 @@ const Register = () => {
                   className="w-full px-4 py-3 rounded-md border-2"
                   {...register("email", { required: true })}
                 />
+                {errors.email && (
+                  <span className="text-sm text-red-500">
+                    Email address is required
+                  </span>
+                )}
               </div>
               <div className="space-y-1 text-sm">
                 <label className="block">Photo URL</label>
@@ -79,11 +110,22 @@ const Register = () => {
               <div className="space-y-1 text-sm">
                 <label className="block ">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   className="w-full px-4 py-3 rounded-md border-2"
                   {...register("password", { required: true })}
                 />
+                <div
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="text-lg absolute -translate-y-9 translate-x-64 md:translate-x-[400px]"
+                >
+                  {showPassword ? <FaEye /> : <FaEyeSlash />}
+                </div>
+                {errors.password && (
+                  <span className="text-sm text-red-500">
+                    Password is required
+                  </span>
+                )}
               </div>
               <button className="btn w-full text-base rounded-md bg-blue-700 text-white uppercase">
                 Register
@@ -107,6 +149,7 @@ const Register = () => {
           </div>
         </div>
       </section>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

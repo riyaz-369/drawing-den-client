@@ -1,34 +1,50 @@
 import { Link } from "react-router-dom";
 import signUpImg from "./../../assets/images/sign-up.svg";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LogIn = () => {
   const { logInUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
 
   const handleLogIn = (logInFormData) => {
     const { email, password } = logInFormData;
 
-    logInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        Swal.fire({
-          title: "Login Successful !",
-          icon: "success",
-          confirmButtonText: "Okay",
+    if (password.length < 6) {
+      toast.error("Length must be at least 6 character.");
+      return;
+    } else if (!/^(?=.*[A-Z])/.test(password)) {
+      toast.error("Password must have an uppercase letter");
+      return;
+    } else if (!/^(?=.*[a-z])/.test(password)) {
+      toast.error("Password must have an lowercase letter");
+      return;
+    } else {
+      logInUser(email, password)
+        .then((result) => {
+          console.log(result.user);
+          Swal.fire({
+            title: "Login Successful !",
+            icon: "success",
+            confirmButtonText: "Okay",
+          });
+        })
+        .catch((error) => {
+          console.log(error.message);
         });
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      return;
+    }
   };
 
   return (
@@ -46,21 +62,33 @@ const LogIn = () => {
                 className="w-full px-4 py-3 rounded-md border-2"
                 {...register("email", { required: true })}
               />
+              {errors.email && (
+                <span className="text-sm text-red-500">Email is required</span>
+              )}
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="password" className="block ">
                 Password
               </label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 className="w-full px-4 py-3 rounded-md border-2"
                 {...register("password", { required: true })}
               />
+              {errors.password && (
+                <span className="text-sm text-red-500">
+                  Password is required
+                </span>
+              )}
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-lg absolute -translate-y-9 translate-x-64 md:translate-x-[400px]"
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </div>
               <div className="flex justify-end text-xs ">
-                <a rel="noopener noreferrer" href="#">
-                  Forgot Password?
-                </a>
+                <a>Forgot Password?</a>
               </div>
             </div>
             <button className="block w-full p-3 text-center rounded-sm bg-blue-700 text-white uppercase">
@@ -107,6 +135,7 @@ const LogIn = () => {
           <img className="w-[600px]" src={signUpImg} alt="" />
         </div>
       </div>
+      <ToastContainer position="top-center" />
     </section>
   );
 };

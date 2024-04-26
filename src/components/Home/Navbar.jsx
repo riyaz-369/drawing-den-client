@@ -1,48 +1,67 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
+import { CiLogin, CiLogout } from "react-icons/ci";
+import { MdAppRegistration } from "react-icons/md";
+import { IoHome } from "react-icons/io5";
+// import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Swal.fire({
+        //   title: "Are you sure?",
+        //   icon: "warning",
+        //   showCancelButton: true,
+        //   confirmButtonColor: "#3085d6",
+        //   cancelButtonColor: "#d33",
+        //   confirmButtonText: "Yes, logout right now",
+        // }).then((resulted) => {
+        //   if (resulted.isConfirmed) {
+        //     Swal.fire({
+        //       title: "Successfully Log Out !",
+        //       icon: "success",
+        //     });
+        //   }
+        // });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const activeLink =
-    "text-indigo-500 font-bold underline underline-offset-8 text-base";
+    "text-indigo-500 font-bold underline underline-offset-8 text-base flex items-center gap-1";
+  const deActiveLink =
+    "transition-all hover:underline underline-offset-8 hover:text-indigo-500 flex items-center gap-1";
 
   const navLinks = (
     <>
       <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? activeLink
-            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
-        }
         to="/"
+        className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
+        <IoHome />
         Home
       </NavLink>
       <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? activeLink
-            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
-        }
         to="/allCraft"
+        className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         All Craft
       </NavLink>
       <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? activeLink
-            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
-        }
         to="/addCraft"
+        className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         Add Craft
       </NavLink>
       <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? activeLink
-            : "transition-all hover:underline underline-offset-8 hover:text-indigo-500"
-        }
         to="/myCraftList"
+        className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         My Craft Lists
       </NavLink>
@@ -86,12 +105,37 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end space-x-3">
-        <Link to="/logIn" className="my-secondary-btn">
-          Log In
-        </Link>
-        <Link to="/register" className="my-primary-btn">
-          Register
-        </Link>
+        {user ? (
+          <div className="flex gap-3">
+            <NavLink to="/login">
+              <button onClick={handleLogOut} className="my-secondary-btn">
+                <CiLogout />
+                Log Out
+              </button>
+            </NavLink>
+            <NavLink
+              className="tooltip tooltip-bottom"
+              data-tip={user.displayName}
+            >
+              <img
+                src={user.photoURL}
+                alt={user.displayName}
+                className="w-10 h-10 md:w-11 md:h-11 rounded-full ring ring-offset-1 ring-indigo-600"
+              />
+            </NavLink>
+          </div>
+        ) : (
+          <div>
+            <Link to="/logIn" className="my-secondary-btn">
+              <CiLogin />
+              Log In
+            </Link>
+            <Link to="/register" className="my-primary-btn">
+              <MdAppRegistration />
+              Register
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
