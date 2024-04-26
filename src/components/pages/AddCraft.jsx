@@ -12,7 +12,7 @@ const AddCraft = () => {
         </p>
         <div className="grid grid-cols-2 gap-4">
           <fieldset>
-            <label className="">Photo</label>
+            <label className="">Photo URL</label>
             <input
               type="url"
               placeholder="https://image/1s8vQ2D/123.jpg"
