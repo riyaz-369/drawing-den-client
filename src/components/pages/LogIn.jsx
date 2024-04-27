@@ -12,11 +12,7 @@ const LogIn = () => {
   const { logInUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleLogIn = (logInFormData) => {
     const { email, password } = logInFormData;
@@ -62,9 +58,6 @@ const LogIn = () => {
                 className="w-full px-4 py-3 rounded-md border-2"
                 {...register("email", { required: true })}
               />
-              {errors.email && (
-                <span className="text-sm text-red-500">Email is required</span>
-              )}
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="password" className="block ">
@@ -76,11 +69,6 @@ const LogIn = () => {
                 className="w-full px-4 py-3 rounded-md border-2"
                 {...register("password", { required: true })}
               />
-              {errors.password && (
-                <span className="text-sm text-red-500">
-                  Password is required
-                </span>
-              )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
                 className="text-lg absolute -translate-y-9 translate-x-64 md:translate-x-[400px]"
