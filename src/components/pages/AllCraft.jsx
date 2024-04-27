@@ -1,14 +1,30 @@
 import { useLoaderData } from "react-router-dom";
-import AllCraftCard from "./AllCraftCard";
+import AllCraftTable from "./AllCraftTable";
 
 const AllCraft = () => {
   const allCraft = useLoaderData();
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {allCraft.map((craft) => (
-        <AllCraftCard key={craft._id} craft={craft} />
-      ))}
+    <div className=" bg-gray-50">
+      <div className="max-w-7xl mx-auto my-16 overflow-x-auto p-12">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Item Name</th>
+              <th>Subcategory Name</th>
+              <th>Processing Time</th>
+              <th>Rating (of 5)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allCraft.map((craft) => (
+              <AllCraftTable key={craft._id} craft={craft} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

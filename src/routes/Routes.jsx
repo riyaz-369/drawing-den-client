@@ -47,17 +47,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCraft",
-        element: <AddCraft />,
+        element: (
+          <PrivetRoute>
+            <AddCraft />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/updateCraft/:id",
-        element: <UpdateCraft />,
+        element: (
+          <PrivetRoute>
+            <UpdateCraft />
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/crafts/${params.id}`),
       },
       {
         path: "/myCraftList",
-        element: <MyCraftList />,
+        element: (
+          <PrivetRoute>
+            <MyCraftList />
+          </PrivetRoute>
+        ),
         loader: () => fetch("http://localhost:5000/crafts"),
       },
     ],
