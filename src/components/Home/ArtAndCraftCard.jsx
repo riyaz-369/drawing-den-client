@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const ArtAndCraftCard = ({ artAndCraft }) => {
   console.log(artAndCraft);
   const {
+    _id,
     photo,
     itemName,
     subCategory,
@@ -17,7 +18,7 @@ const ArtAndCraftCard = ({ artAndCraft }) => {
   } = artAndCraft;
 
   return (
-    <div className=" w-96">
+    <div className="border p-4">
       <figure>
         <img src={photo} alt={itemName} />
       </figure>
@@ -28,7 +29,7 @@ const ArtAndCraftCard = ({ artAndCraft }) => {
         <h2 className="card-title">{itemName}</h2>
         <p>{details}</p>
         <div className="card-actions">
-          <Link to="/artDetails">
+          <Link to={`/artDetails/${_id}`}>
             <button className="my-secondary-btn w-full">View Details</button>
           </Link>
         </div>
