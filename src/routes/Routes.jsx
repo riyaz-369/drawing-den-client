@@ -32,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/allCraft",
         element: <AllCraft />,
+        loader: () => fetch("http://localhost:5000/crafts"),
       },
       {
         path: "/artDetails/:id",
@@ -44,8 +45,10 @@ const router = createBrowserRouter([
         element: <AddCraft />,
       },
       {
-        path: "/updateCraft",
+        path: "/updateCraft/:id",
         element: <UpdateCraft />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/crafts/${params.id}`),
       },
       {
         path: "/myCraftList",

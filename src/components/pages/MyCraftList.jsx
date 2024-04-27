@@ -1,12 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import MyCraftListCard from "./MyCraftListCard";
+import { useState } from "react";
 
 const MyCraftList = () => {
-  const myCrafts = useLoaderData();
+  const myLoadedCrafts = useLoaderData();
+  const [myCrafts, setMyCrafts] = useState(myLoadedCrafts);
 
   return (
     <div className="max-w-7xl mx-auto my-24">
-      <div className="dropdown dropdown-hover">
+      {/* <div className="dropdown dropdown-hover">
         <div tabIndex={0} role="button" className="btn m-1">
           Sort:
         </div>
@@ -21,10 +23,15 @@ const MyCraftList = () => {
             <a>Item 2</a>
           </li>
         </ul>
-      </div>
-      <div>
-        {myCrafts.map((myCraft) => (
-          <MyCraftListCard key={myCraft._id} myCraft={myCraft} />
+      </div> */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {myLoadedCrafts.map((myCraft) => (
+          <MyCraftListCard
+            key={myCraft._id}
+            myCraft={myCraft}
+            myCrafts={myCrafts}
+            setMyCrafts={setMyCrafts}
+          />
         ))}
       </div>
     </div>

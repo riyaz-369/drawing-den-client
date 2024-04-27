@@ -2,35 +2,35 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { CiLogin, CiLogout } from "react-icons/ci";
-import { MdAppRegistration } from "react-icons/md";
-import { IoHome } from "react-icons/io5";
-// import Swal from "sweetalert2";
+import { MdAppRegistration, MdOutlineLibraryAdd } from "react-icons/md";
+import { IoHome, IoList } from "react-icons/io5";
+import Swal from "sweetalert2";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        // Swal.fire({
-        //   title: "Are you sure?",
-        //   icon: "warning",
-        //   showCancelButton: true,
-        //   confirmButtonColor: "#3085d6",
-        //   cancelButtonColor: "#d33",
-        //   confirmButtonText: "Yes, logout right now",
-        // }).then((resulted) => {
-        //   if (resulted.isConfirmed) {
-        //     Swal.fire({
-        //       title: "Successfully Log Out !",
-        //       icon: "success",
-        //     });
-        //   }
-        // });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout right now",
+    }).then((resulted) => {
+      if (resulted.isConfirmed) {
+        logOut()
+          .then(() => {})
+          .catch((error) => {
+            console.log(error);
+          });
+        Swal.fire({
+          title: "Successfully Log Out !",
+          icon: "success",
+        });
+      }
+    });
   };
 
   const activeLink =
@@ -51,25 +51,28 @@ const Navbar = () => {
         to="/allCraft"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
+        <FaExternalLinkAlt />
         All Craft
       </NavLink>
       <NavLink
         to="/addCraft"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
+        <MdOutlineLibraryAdd />
         Add Craft
       </NavLink>
       <NavLink
         to="/myCraftList"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
+        <IoList />
         My Craft Lists
       </NavLink>
     </>
   );
 
   return (
-    <div className="navbar bg-gray-50 shadow-md mb-6 p-2 px-6">
+    <div className="navbar bg-gray-50 shadow-md mb-6 p-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -96,11 +99,13 @@ const Navbar = () => {
           </ul>
         </div>
         <Link className="text-2xl font-semibold transition-all duration-300 hover:scale-105">
-          DrawingDen
+          <h1 className="bg-gradient-to-r from-blue-500 to-indigo-600 inline-block text-transparent bg-clip-text">
+            DrawingDen
+          </h1>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-base space-x-4">
+        <ul className="menu menu-horizontal px-1 text-base space-x-8">
           {navLinks}
         </ul>
       </div>

@@ -6,10 +6,11 @@ import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const LogIn = () => {
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, logInWithGoogle, gitHubLogIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
   const { register, handleSubmit } = useForm();
@@ -41,6 +42,34 @@ const LogIn = () => {
         });
       return;
     }
+  };
+
+  const handleGoogleLogIn = () => {
+    logInWithGoogle()
+      .then(() => {
+        Swal.fire({
+          title: "Login Successful !",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    gitHubLogIn()
+      .then(() => {
+        Swal.fire({
+          title: "Login Successful !",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -90,19 +119,25 @@ const LogIn = () => {
           </div>
           <div className="my-6 space-y-4">
             <button
+              onClick={handleGoogleLogIn}
               aria-label="Login with Google"
               type="button"
-              className="flex btn-sm items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
+              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
             >
-              {/* logo */}
+              <span className="text-3xl">
+                <FcGoogle />
+              </span>
               <p>Login with Google</p>
             </button>
             <button
+              onClick={handleGithubLogin}
               aria-label="Login with GitHub"
               role="button"
-              className="flex btn-sm items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
+              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
             >
-              {/* logo */}
+              <span className="text-3xl">
+                <FaGithub />
+              </span>
               <p>Login with GitHub</p>
             </button>
           </div>
