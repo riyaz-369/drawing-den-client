@@ -9,6 +9,7 @@ import AddCraft from "../components/pages/AddCraft";
 import MyCraftList from "../components/pages/MyCraftList";
 import ViewDetails from "../components/pages/ViewDetails";
 import UpdateCraft from "../components/pages/UpdateCraft";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/artDetails/:id",
-        element: <ViewDetails />,
+        element: (
+          <PrivetRoute>
+            <ViewDetails />
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/crafts/${params.id}`),
       },
