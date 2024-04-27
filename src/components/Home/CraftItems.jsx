@@ -1,6 +1,17 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ArtAndCraftCard from "./ArtAndCraftCard";
 
 const CraftItems = () => {
+  const [artAndCrafts, setArtAndCraft] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/crafts")
+      .then((res) => res.json())
+      .then((data) => {
+        setArtAndCraft(data);
+      });
+  }, []);
+
   return (
     <div>
       <div className="text-center mb-16">
@@ -12,22 +23,10 @@ const CraftItems = () => {
           consectetur quaerat?
         </p>
       </div>
-      <div className=" w-96">
-        <figure>
-          <img src="https://i.ibb.co/1s8vQ2D/290964065.jpg" alt="car!" />
-        </figure>
-        <div className="space-y-4">
-          <button className="bg-green-400 text-sm text-white font-semibold p-1 px-3 rounded-sm mt-4">
-            Landscape Painting
-          </button>
-          <h2 className="card-title">Life hack Lorem ipsum dolor sit</h2>
-          <p>How to park car at your garage your car at your garage?</p>
-          <div className="card-actions">
-            <Link to="/artDetails">
-              <button className="my-secondary-btn w-full">View Details</button>
-            </Link>
-          </div>
-        </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3">
+        {artAndCrafts.map((artAndCraft) => (
+          <ArtAndCraftCard key={artAndCraft._id} artAndCraft={artAndCraft} />
+        ))}
       </div>
     </div>
   );
