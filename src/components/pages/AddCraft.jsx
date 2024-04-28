@@ -1,14 +1,21 @@
 import { useForm } from "react-hook-form";
 import addImage from "./../../assets/images/add.svg";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const AddCraft = () => {
   const { register, handleSubmit } = useForm();
 
+  const { user } = useContext(AuthContext);
+  const email = user.reloadUserInfo.email;
+  const displayName = user.reloadUserInfo.displayName;
+  console.log(email, displayName);
+
   const handleAddCraft = (formInfo) => {
     console.log(formInfo);
 
-    fetch("http://localhost:5000/crafts", {
+    fetch("https://drawing-den-server.vercel.app/crafts", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(formInfo),
@@ -121,20 +128,20 @@ const AddCraft = () => {
             />
           </fieldset>
           <fieldset>
-            <label className="">Your Email</label>
+            <label className="">Email</label>
             <input
               type="email"
-              placeholder="Enter your email address"
               className="w-full input input-sm text-sm border-gray-300"
+              value={email}
               {...register("email", { required: true })}
             />
           </fieldset>
           <fieldset className="mb-2 col-span-2">
-            <label className="">Your Name</label>
+            <label className="">Full Name</label>
             <input
               type="text"
-              placeholder="Enter your name"
               className="w-full input input-sm text-sm border-gray-300"
+              defaultValue={displayName}
               {...register("fullName", { required: true })}
             />
           </fieldset>

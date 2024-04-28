@@ -118,7 +118,7 @@ const Navbar = () => {
                 Log Out
               </button>
             </NavLink>
-            <NavLink
+            <span
               className="tooltip tooltip-bottom"
               data-tip={user.displayName}
             >
@@ -127,7 +127,7 @@ const Navbar = () => {
                 alt={user.displayName}
                 className="w-10 h-10 md:w-11 md:h-11 rounded-full ring ring-offset-1 ring-indigo-600"
               />
-            </NavLink>
+            </span>
           </div>
         ) : (
           <div>

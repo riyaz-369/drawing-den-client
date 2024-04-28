@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/allCraft",
         element: <AllCraft />,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () => fetch("https://drawing-den-server.vercel.app/crafts"),
       },
       {
         path: "/artDetails/:id",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(`https://drawing-den-server.vercel.app/crafts/${params.id}`),
       },
       {
         path: "/addCraft",
@@ -61,16 +61,15 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(`https://drawing-den-server.vercel.app/crafts/${params.id}`),
       },
       {
-        path: "/myCraftList",
+        path: "/myCraftList", //implement findMany using email: new obId(email)
         element: (
           <PrivetRoute>
             <MyCraftList />
           </PrivetRoute>
         ),
-        loader: () => fetch("http://localhost:5000/crafts"),
       },
     ],
   },

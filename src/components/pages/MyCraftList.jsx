@@ -1,10 +1,20 @@
-import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
+// import MyCraftListCard from "./MyCraftListCard";
+import { useContext, useEffect, useState } from "react";
 import MyCraftListCard from "./MyCraftListCard";
-import { useState } from "react";
 
 const MyCraftList = () => {
-  const myLoadedCrafts = useLoaderData();
-  const [myCrafts, setMyCrafts] = useState(myLoadedCrafts);
+  const [myCrafts, setMyCrafts] = useState([]);
+  const { user } = useContext(AuthContext);
+  const email = user.reloadUserInfo.email;
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/crafts-email/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyCrafts(data);
+      });
+  }, [email]);
 
   return (
     <div className="max-w-7xl mx-auto my-24">
@@ -25,12 +35,12 @@ const MyCraftList = () => {
         </ul>
       </div> */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {myLoadedCrafts.map((myCraft) => (
+        {myCrafts.map((myCraft) => (
           <MyCraftListCard
             key={myCraft._id}
             myCraft={myCraft}
-            myCrafts={myCrafts}
             setMyCrafts={setMyCrafts}
+            myCrafts={myCrafts}
           />
         ))}
       </div>

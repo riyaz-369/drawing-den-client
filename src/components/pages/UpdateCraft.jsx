@@ -23,7 +23,7 @@ const UpdateCraft = () => {
 
   const handleUpdate = (updateFormData) => {
     console.log(updateFormData);
-    fetch(`http://localhost:5000/crafts/${_id}`, {
+    fetch(`https://drawing-den-server.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updateFormData),

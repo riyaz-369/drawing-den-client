@@ -43,7 +43,7 @@ const Register = () => {
               console.log(error);
             });
 
-          fetch(" http://localhost:5000/users", {
+          fetch(" https://drawing-den-server.vercel.app/users", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(formData),

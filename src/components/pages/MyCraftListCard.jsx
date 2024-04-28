@@ -17,7 +17,7 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
     fullName,
   } = myCraft;
 
-  const handleDelete = (_id) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",
@@ -27,7 +27,7 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(` http://localhost:5000/crafts/${_id}`, {
+        fetch(` https://drawing-den-server.vercel.app/crafts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -38,7 +38,7 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
                 text: "Your craft has been deleted.",
                 icon: "success",
               });
-              const remaining = myCrafts.filter((craft) => craft._id !== _id);
+              const remaining = myCrafts.filter((craft) => craft._id !== id);
               setMyCrafts(remaining);
             }
           });
