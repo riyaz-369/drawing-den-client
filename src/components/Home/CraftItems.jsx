@@ -14,13 +14,15 @@ const CraftItems = () => {
 
   return (
     <div>
-      <div className="text-center mb-16">
-        <h2 className="text-4xl">Our ART And CRAFTS</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum vel
-          nam voluptate, id blanditiis labore ipsum laborum nisi dolorum esse,
-          rerum assumenda voluptatum iste voluptatibus animi et temporibus
-          consectetur quaerat?
+      <div className="text-center mb-16 space-y-2">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-normal">
+          Crafted Creations Unveiling <br /> Our Artistic Endeavors
+        </h2>
+        <p className="text-sm md:text-base">
+          Indulge in a showcase of our meticulously crafted creations, each a
+          testament to our passion for artistry. Explore <br /> a gallery filled
+          with the heart and soul of our artisans, where creativity knows no
+          bounds.
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

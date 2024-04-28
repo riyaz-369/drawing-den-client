@@ -11,7 +11,10 @@ const AllCraftTable = ({ craft }) => {
       <td>{processTime}</td>
       <td>{rating}</td>
       <td>
-        <Link to={`/artDetails/${_id}`} className="btn btn-sm btn-primary">
+        <Link
+          to={`/artDetails/${_id}`}
+          className="btn bg-violet-500 hover:bg-violet-700 text-white text-xs lg:text-base btn-sm"
+        >
           View Details
         </Link>
       </td>

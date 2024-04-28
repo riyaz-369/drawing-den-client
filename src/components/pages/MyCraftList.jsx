@@ -17,7 +17,7 @@ const MyCraftList = () => {
   }, [email]);
 
   return (
-    <div className="max-w-7xl mx-auto my-24">
+    <div className="max-w-7xl mx-auto my-16">
       {/* <div className="dropdown dropdown-hover">
         <div tabIndex={0} role="button" className="btn m-1">
           Sort:

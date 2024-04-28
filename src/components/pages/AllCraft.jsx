@@ -5,8 +5,8 @@ const AllCraft = () => {
   const allCraft = useLoaderData();
 
   return (
-    <div className=" bg-gray-50">
-      <div className="max-w-7xl mx-auto my-16 overflow-x-auto p-12">
+    <div className="bg-gray-50">
+      <div className="max-w-7xl mx-auto my-12 lg:my-16 overflow-x-auto lg:p-12">
         <table className="table">
           {/* head */}
           <thead>

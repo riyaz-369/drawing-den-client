@@ -74,8 +74,8 @@ const LogIn = () => {
 
   return (
     <section className=" bg-gray-50">
-      <div className="max-w-7xl mx-auto my-12 flex justify-between items-end">
-        <div className="pb-8 w-1/3 space-y-3">
+      <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
+        <div className="p-4 lg:p-0 lg:pb-8 w-full lg:w-1/3 space-y-3">
           <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block">
@@ -108,9 +108,7 @@ const LogIn = () => {
                 <a>Forgot Password?</a>
               </div>
             </div>
-            <button className="block w-full p-3 text-center rounded-sm bg-blue-700 text-white uppercase">
-              Log In
-            </button>
+            <button className="form-btn uppercase">Log In</button>
           </form>
           <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16"></div>
@@ -122,7 +120,7 @@ const LogIn = () => {
               onClick={handleGoogleLogIn}
               aria-label="Login with Google"
               type="button"
-              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
+              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-violet-600 hover:shadow-md transition-all"
             >
               <span className="text-3xl">
                 <FcGoogle />
@@ -133,7 +131,7 @@ const LogIn = () => {
               onClick={handleGithubLogin}
               aria-label="Login with GitHub"
               role="button"
-              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-blue-700 hover:shadow-md transition-all"
+              className="flex btn-sm py-6 items-center justify-center w-full p-4 space-x-4 border rounded-md border-gray-600 hover:border-violet-600 hover:shadow-md transition-all"
             >
               <span className="text-3xl">
                 <FaGithub />
@@ -145,13 +143,13 @@ const LogIn = () => {
             Dont have an account?
             <Link
               to="/register"
-              className="btn-link font-bold hover:text-indigo-500 no-underline hover:underline"
+              className="btn-link text-violet-500 font-bold hover:text-indigo-500 no-underline hover:underline"
             >
               Register
             </Link>
           </p>
         </div>
-        <div>
+        <div className="hidden lg:flex lg:flex-col">
           <h1 className="text-3xl pl-28 font-semibold pb-4 pt-8">
             Login Your Account
           </h1>

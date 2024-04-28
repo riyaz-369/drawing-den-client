@@ -47,14 +47,14 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <figure>
-        <img src={photo} alt={itemName} />
+    <div className="card bg-base-100 rounded-md shadow-xl">
+      <figure className="h-56">
+        <img className="w-full" src={photo} alt={itemName} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">
           {itemName}
-          <div className="badge badge-secondary">{subCategory}</div>
+          <div className="badge bg-violet-500 text-white">{subCategory}</div>
         </h2>
         <p>{details}</p>
         <h3 className="text-3xl font-semibold">{price} $</h3>
@@ -82,15 +82,13 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
             </table>
           </div>
         </div>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-start mt-4">
           <Link to={`/updateCraft/${_id}`}>
-            <button className="btn bg-violet-600 text-white hover:bg-violet-500 rounded-full">
-              Update
-            </button>
+            <button className="my-primary-btn">Update</button>
           </Link>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn bg-violet-600 text-white hover:bg-violet-500 rounded-full"
+            className="my-secondary-btn"
           >
             Delete
           </button>

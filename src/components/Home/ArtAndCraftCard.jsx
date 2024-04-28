@@ -1,32 +1,35 @@
+import { FaRegStar } from "react-icons/fa";
+import { IoPricetagsOutline } from "react-icons/io5";
+import { MdProductionQuantityLimits } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const ArtAndCraftCard = ({ artAndCraft }) => {
-  const {
-    _id,
-    photo,
-    itemName,
-    subCategory,
-    details,
-    price,
-    rating,
-    customization,
-    processTime,
-    stock,
-    email,
-    fullName,
-  } = artAndCraft;
+  const { _id, photo, itemName, details, price, rating, stock } = artAndCraft;
 
   return (
-    <div className="border p-4">
-      <figure>
-        <img src={photo} alt={itemName} />
+    <div className="card border transition-all p-3 duration-300 lg:hover:bg-orange-50 rounded-md">
+      <figure className="h-56">
+        <img className="rounded-md w-full" src={photo} alt={itemName} />
       </figure>
-      <div className="space-y-4">
+      <div className="space-y-2 card-body">
         <h2 className="card-title">{itemName}</h2>
-        <p>{details}</p>
+        <p className="text-sm md:text-base">{details}</p>
+        <p className="flex items-center gap-1">
+          <IoPricetagsOutline />
+          <span className="font-bold">Price:</span> {price} $
+        </p>
+        <p className="flex items-center gap-1">
+          <FaRegStar />
+          <span className="font-bold">Rating:</span> {rating}
+        </p>
+        <p className="flex items-center gap-1">
+          <MdProductionQuantityLimits />
+          <span className="font-bold">Stock:</span>{" "}
+          <span className="text-orange-500 capitalize">{stock}</span>
+        </p>
         <div className="card-actions">
-          <Link to={`/artDetails/${_id}`}>
-            <button className="my-secondary-btn w-full">View Details</button>
+          <Link className="btn w-full card-btn" to={`/artDetails/${_id}`}>
+            <button>View Details</button>
           </Link>
         </div>
       </div>

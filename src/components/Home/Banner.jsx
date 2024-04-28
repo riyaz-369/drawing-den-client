@@ -32,40 +32,27 @@ const Banner = () => {
         modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
       >
         <SwiperSlide>
-          <section className="dark:bg-gray-100 dark:text-gray-800">
-            <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-                  Ac mattis
-                  <span className="dark:text-violet-600">senectus</span>erat
-                  pharetra
+          <section className="dark:bg-gray-50 dark:text-gray-800">
+            <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
+                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                  Inspiration
+                  <span className="dark:text-violet-600">Everywhere</span>
+                  <br />
+                  Artistry in Everyday{" "}
+                  <span className="text-violet-600">Moments</span>
                 </h1>
-                <p className="mt-6 mb-8 text-lg sm:mb-12">
-                  Dictum aliquam porta in condimentum ac integer
-                  <br className="hidden md:inline lg:hidden" />
-                  turpis pulvinar, est scelerisque ligula sem
+                <p className="mt-6 mb-8 text-sm lg:text-base sm:mb-12">
+                  Transforming blank pages into vibrant characters: Join us to
+                  explore the art of sketching!
                 </p>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
-                  >
-                    Suspendisse
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800"
-                  >
-                    Malesuada
-                  </a>
+                  <a className="banner-btn">Explore</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                 <img
                   src={banner1}
-                  alt=""
                   className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
                 />
               </div>
@@ -73,40 +60,27 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-100 dark:text-gray-800">
-            <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-                  Ac mattis
-                  <span className="dark:text-violet-600">senectus</span>erat
-                  pharetra
+          <section className="dark:bg-gray-50 dark:text-gray-800">
+            <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
+                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                  Sketching Dreams
+                  <span className="dark:text-violet-600">Where</span>
+                  <br />
+                  Imagination Takes{" "}
+                  <span className="text-violet-600">Shapes</span>
                 </h1>
-                <p className="mt-6 mb-8 text-lg sm:mb-12">
-                  Dictum aliquam porta in condimentum ac integer
-                  <br className="hidden md:inline lg:hidden" />
-                  turpis pulvinar, est scelerisque ligula sem
+                <p className="mt-6 mb-8 text-sm lg:text-base sm:mb-12">
+                  Discover artistry in the mundane where every glance sparks
+                  creativity. Join our inspirational community today!
                 </p>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
-                  >
-                    Suspendisse
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800"
-                  >
-                    Malesuada
-                  </a>
+                  <a className="banner-btn">Explore</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                 <img
                   src={banner2}
-                  alt=""
                   className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
                 />
               </div>
@@ -114,40 +88,27 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-100 dark:text-gray-800">
-            <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-                  Ac mattis
-                  <span className="dark:text-violet-600">senectus</span>erat
-                  pharetra
+          <section className="dark:bg-gray-50 dark:text-gray-800">
+            <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
+                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                  Visionaries Unite
+                  <span className="dark:text-violet-600">Discover</span>
+                  <br />
+                  the Beauty of Art in
+                  <span className="text-violet-600">Every Stroke</span>
                 </h1>
-                <p className="mt-6 mb-8 text-lg sm:mb-12">
-                  Dictum aliquam porta in condimentum ac integer
-                  <br className="hidden md:inline lg:hidden" />
-                  turpis pulvinar, est scelerisque ligula sem
+                <p className="mt-6 mb-8 text-sm lg:text-base sm:mb-12">
+                  See art in every stroke, Join us to celebrate diverse
+                  creativity and endless inspiration!
                 </p>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
-                  >
-                    Suspendisse
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800"
-                  >
-                    Malesuada
-                  </a>
+                  <a className="banner-btn">Explore</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                 <img
                   src={banner3}
-                  alt=""
                   className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
                 />
               </div>
@@ -155,40 +116,27 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-100 dark:text-gray-800">
-            <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-                  Ac mattis
-                  <span className="dark:text-violet-600">senectus</span>erat
-                  pharetra
+          <section className="dark:bg-gray-50 dark:text-gray-800">
+            <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
+                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                  Worlds Collide
+                  <span className="dark:text-violet-600">Where</span>
+                  <br />
+                  Three
+                  <span className="text-violet-600">Artistic Fusion</span>
                 </h1>
-                <p className="mt-6 mb-8 text-lg sm:mb-12">
-                  Dictum aliquam porta in condimentum ac integer
-                  <br className="hidden md:inline lg:hidden" />
-                  turpis pulvinar, est scelerisque ligula sem
+                <p className="mt-6 mb-8 text-sm lg:text-base sm:mb-12">
+                  Three worlds unite, Explore diverse art forms and boundless
+                  creativity in our vibrant community!
                 </p>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
-                  >
-                    Suspendisse
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800"
-                  >
-                    Malesuada
-                  </a>
+                  <a className="banner-btn">Explore</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                 <img
                   src={banner4}
-                  alt=""
                   className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
                 />
               </div>

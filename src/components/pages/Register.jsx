@@ -68,9 +68,9 @@ const Register = () => {
 
   return (
     <div>
-      <section className=" bg-gray-50">
-        <div className="max-w-7xl mx-auto my-12 flex justify-between items-end">
-          <div className="py-8 w-1/3 space-y-3">
+      <section className="bg-gray-50">
+        <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
+          <div className="p-4 lg:p-0 lg:py-8 w-full lg:w-1/3 space-y-3">
             <form onSubmit={handleSubmit(handleRegister)} className="space-y-6">
               <div className="space-y-1 text-sm">
                 <label className="block">Full Name</label>
@@ -127,9 +127,7 @@ const Register = () => {
                   </span>
                 )}
               </div>
-              <button className="btn w-full text-base rounded-md bg-blue-700 text-white uppercase">
-                Register
-              </button>
+              <button className="form-btn uppercase">Register</button>
             </form>
             <p className="text-center">
               Already have an account?
@@ -141,11 +139,11 @@ const Register = () => {
               </Link>
             </p>
           </div>
-          <div>
+          <div className="hidden lg:flex lg:flex-col">
             <h1 className="text-3xl font-semibold mb-6">
               Register Your Account
             </h1>
-            <img className="w-[600px]" src={registerImg} />
+            <img className="lg:w-[600px]" src={registerImg} />
           </div>
         </div>
       </section>
