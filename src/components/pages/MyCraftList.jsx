@@ -9,7 +9,7 @@ const MyCraftList = () => {
   const email = user.reloadUserInfo.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/crafts-email/${email}`)
+    fetch(`https://drawing-den-server.vercel.app/crafts-email/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyCrafts(data);

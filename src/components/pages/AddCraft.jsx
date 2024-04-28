@@ -10,11 +10,8 @@ const AddCraft = () => {
   const { user } = useContext(AuthContext);
   const email = user.reloadUserInfo.email;
   const displayName = user.reloadUserInfo.displayName;
-  console.log(email, displayName);
 
   const handleAddCraft = (formInfo) => {
-    console.log(formInfo);
-
     fetch("https://drawing-den-server.vercel.app/crafts", {
       method: "POST",
       headers: { "content-type": "application/json" },

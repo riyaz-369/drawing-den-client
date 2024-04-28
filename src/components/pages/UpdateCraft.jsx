@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import updateImg from "./../../assets/images/update.svg";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const UpdateCraft = () => {
   const loadedCraft = useLoaderData();
@@ -15,14 +16,11 @@ const UpdateCraft = () => {
     customization,
     processTime,
     stock,
-    email,
-    fullName,
   } = loadedCraft;
 
   const { register, handleSubmit } = useForm();
 
   const handleUpdate = (updateFormData) => {
-    console.log(updateFormData);
     fetch(`https://drawing-den-server.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
@@ -30,7 +28,13 @@ const UpdateCraft = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Successfully updated your item !",
+            icon: "success",
+            confirmButtonText: "Okay",
+          });
+        }
       });
   };
 

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const ArtAndCraftCard = ({ artAndCraft }) => {
-  console.log(artAndCraft);
   const {
     _id,
     photo,
@@ -23,9 +22,6 @@ const ArtAndCraftCard = ({ artAndCraft }) => {
         <img src={photo} alt={itemName} />
       </figure>
       <div className="space-y-4">
-        <button className="bg-green-400 text-sm text-white font-semibold p-1 px-3 rounded-sm mt-4">
-          {subCategory}
-        </button>
         <h2 className="card-title">{itemName}</h2>
         <p>{details}</p>
         <div className="card-actions">

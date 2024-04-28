@@ -99,9 +99,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link className="text-2xl font-semibold transition-all duration-300 hover:scale-105">
-          <h1 className="bg-gradient-to-r from-blue-500 to-indigo-600 inline-block text-transparent bg-clip-text">
-            DrawingDen
-          </h1>
+          <h1 className="text-gradient">DrawingDen</h1>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
