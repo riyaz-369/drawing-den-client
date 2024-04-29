@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { FaRegStar } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { IoPricetagsOutline } from "react-icons/io5";
@@ -12,6 +13,9 @@ const CategoryViewDetails = () => {
 
   return (
     <div className="max-w-7xl mx-auto my-4 md:my-8 lg:my-16">
+      <Helmet>
+        <title>DrawingDen | Details/{subCategory}</title>
+      </Helmet>
       <div className="card lg:card-side border rounded-md">
         <figure className="w-full lg:w-1/2">
           <img className="h-full" src={image} alt={itemName} />

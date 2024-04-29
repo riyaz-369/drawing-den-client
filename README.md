@@ -21,3 +21,4 @@
 - [React Hook Form](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Sweet Alert2](https://sweetalert2.github.io/#download)
+- [React Helmet](https://www.npmjs.com/package/react-helmet)

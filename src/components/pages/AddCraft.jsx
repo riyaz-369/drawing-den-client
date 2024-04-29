@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddCraft = () => {
   const { register, handleSubmit } = useForm();
@@ -36,6 +37,9 @@ const AddCraft = () => {
 
   return (
     <div className="my-4 md:my-8 lg:my-16">
+      <Helmet>
+        <title>DrawingDen | Add Art And Craft</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12 justify-between">
         <form
           onSubmit={handleSubmit(handleAddCraft)}

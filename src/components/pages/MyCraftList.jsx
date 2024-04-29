@@ -2,6 +2,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 // import MyCraftListCard from "./MyCraftListCard";
 import { useContext, useEffect, useState } from "react";
 import MyCraftListCard from "./MyCraftListCard";
+import { Helmet } from "react-helmet";
 
 const MyCraftList = () => {
   const [myCrafts, setMyCrafts] = useState([]);
@@ -18,6 +19,9 @@ const MyCraftList = () => {
 
   return (
     <div className="max-w-7xl mx-auto my-16">
+      <Helmet>
+        <title>DrawingDen | My Craft List</title>
+      </Helmet>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {myCrafts.map((myCraft) => (
           <MyCraftListCard

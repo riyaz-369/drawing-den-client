@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const { logInUser, logInWithGoogle, gitHubLogIn } = useContext(AuthContext);
@@ -93,7 +94,10 @@ const LogIn = () => {
   };
 
   return (
-    <section className="">
+    <section>
+      <Helmet>
+        <title>DrawingDen | Login</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
         <div className="p-4 lg:p-0 lg:pb-8 w-full lg:w-1/3 space-y-3">
           <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">

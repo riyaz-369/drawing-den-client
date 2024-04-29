@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import AllCraftTable from "./AllCraftTable";
+import { Helmet } from "react-helmet";
 
 const AllCraft = () => {
   const allCraft = useLoaderData();
@@ -7,8 +8,10 @@ const AllCraft = () => {
   return (
     <div>
       <div className="max-w-7xl mx-auto my-8 md:my-16 overflow-x-auto">
+        <Helmet>
+          <title>DrawingDen | All Art And Craft</title>
+        </Helmet>
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th></th>

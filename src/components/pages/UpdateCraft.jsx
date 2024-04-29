@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import updateImg from "./../../assets/images/update.svg";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const UpdateCraft = () => {
   const loadedCraft = useLoaderData();
@@ -40,6 +41,9 @@ const UpdateCraft = () => {
 
   return (
     <div className="my-4 md:my-8 lg:my-16">
+      <Helmet>
+        <title>DrawingDen | Update Art and Craft</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12 justify-between">
         <form
           onSubmit={handleSubmit(handleUpdate)}

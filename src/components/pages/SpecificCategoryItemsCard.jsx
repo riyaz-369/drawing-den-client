@@ -4,6 +4,7 @@ import { IoPricetagsOutline } from "react-icons/io5";
 import { MdOutlineCategory, MdProductionQuantityLimits } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
 const SpecificCategoryItemsCard = ({ categoryItem }) => {
   const {
@@ -20,6 +21,9 @@ const SpecificCategoryItemsCard = ({ categoryItem }) => {
 
   return (
     <div className="card border transition-all p-3 duration-300 rounded-md">
+      <Helmet>
+        <title>DrawingDen | Subcategory/{subCategory}</title>
+      </Helmet>
       <figure className="h-56">
         <img className="rounded-md w-full" src={photo} alt={itemName} />
       </figure>
