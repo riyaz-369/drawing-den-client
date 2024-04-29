@@ -77,14 +77,14 @@ const router = createBrowserRouter([
         path: "/categoryDetails/:id",
         element: <CategoryViewDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://drawing-den-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/subCategory/:subCategory",
         element: <SpecificCategoriesItem />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/craft-subcategory/${params.subCategory}`
+            `https://drawing-den-server.vercel.app/craft-subcategory/${params.subCategory}`
           ),
       },
     ],

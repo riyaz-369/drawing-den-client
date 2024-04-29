@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from "prop-types";
 
 const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
   const {
@@ -95,3 +96,9 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
 };
 
 export default MyCraftListCard;
+
+MyCraftListCard.propTypes = {
+  myCraft: PropTypes.object,
+  myCrafts: PropTypes.array,
+  setMyCrafts: PropTypes.func,
+};

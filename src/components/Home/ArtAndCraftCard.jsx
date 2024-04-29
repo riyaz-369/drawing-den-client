@@ -2,6 +2,7 @@ import { FaRegStar } from "react-icons/fa";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ArtAndCraftCard = ({ artAndCraft }) => {
   const { _id, photo, itemName, details, price, rating, stock } = artAndCraft;
@@ -38,3 +39,7 @@ const ArtAndCraftCard = ({ artAndCraft }) => {
 };
 
 export default ArtAndCraftCard;
+
+ArtAndCraftCard.propTypes = {
+  artAndCraft: PropTypes.object,
+};

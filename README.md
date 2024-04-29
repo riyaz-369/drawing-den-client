@@ -1,6 +1,19 @@
-# React + Vite
+# DrawingDen
 
-<!-- details text write here  -->
+- [drawing-den.web.app](https://drawing-den.web.app/)
+
+# Website features
+
+## Painting and Drawing
+
+- Landscape Painting
+- Portrait Drawing
+- Watercolour Painting
+- Oil Painting
+- Charcoal Sketching
+- Cartoon Drawing
+
+# Uses Package
 
 - [React-Router-DOM](https://reactrouter.com/en/main)
 - [TailwindCSS](https://github.com/vitejs/vite-plugin-react-swc)

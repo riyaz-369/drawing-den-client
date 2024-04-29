@@ -125,7 +125,7 @@ const LogIn = () => {
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </div>
               <div className="flex justify-end text-xs ">
-                <a>Forgot Password?</a>
+                <button>Forgot Password?</button>
               </div>
             </div>
             <button className="form-btn uppercase">Log In</button>

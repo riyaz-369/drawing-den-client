@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CategoriesCard = ({ category }) => {
-  const { _id, image, itemName, details, subCategory, price, rating } =
-    category;
+  const { _id, image, itemName, details, subCategory } = category;
 
   return (
     <Link>
@@ -37,4 +37,6 @@ const CategoriesCard = ({ category }) => {
 
 export default CategoriesCard;
 
-// text-[#F78C9C]
+CategoriesCard.propTypes = {
+  category: PropTypes.object,
+};

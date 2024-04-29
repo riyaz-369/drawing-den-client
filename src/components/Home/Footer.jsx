@@ -6,7 +6,7 @@ const Footer = () => {
           <div>
             <a className="flex space-x-3 justify-start">
               <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-                <img src="/public/logos.png" alt="" />
+                <img src="/logos.png" />
               </div>
               <span className="self-center text-3xl font-semibold">
                 DrawingDen
@@ -39,16 +39,16 @@ const Footer = () => {
               </div>
               <div className="flex justify-start space-x-3">
                 <a title="Facebook" className="flex items-center w-11 p-1">
-                  <img src="/public/Facebook.png" alt="" />
+                  <img src="/Facebook.png" alt="" />
                 </a>
                 <a title="Twitter" className="flex items-center  w-11 p-1">
-                  <img src="/public/Instagram.png" alt="" />
+                  <img src="/Instagram.png" alt="" />
                 </a>
                 <a title="Instagram" className="flex items-center w-11 p-1">
-                  <img src="/public/Youtube.png" alt="" />
+                  <img src="/Youtube.png" alt="" />
                 </a>
                 <a title="Instagram" className="flex items-center w-11 p-1">
-                  <img src="/public/Pinterest.png" alt="" />
+                  <img src="/Pinterest.png" alt="" />
                 </a>
               </div>
             </div>
