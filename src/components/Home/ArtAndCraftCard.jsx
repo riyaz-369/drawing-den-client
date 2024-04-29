@@ -8,7 +8,7 @@ const ArtAndCraftCard = ({ artAndCraft }) => {
   const { _id, photo, itemName, details, price, rating, stock } = artAndCraft;
 
   return (
-    <div className="card border transition-all p-3 duration-300 rounded-md hover:-translate-y-4">
+    <div className="card border transition-all p-3 duration-300 rounded-md lg:hover:-translate-y-4">
       <figure className="h-56">
         <img className="rounded-md w-full" src={photo} alt={itemName} />
       </figure>

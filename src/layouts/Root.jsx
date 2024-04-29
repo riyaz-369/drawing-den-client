@@ -13,7 +13,7 @@ const Root = () => {
   return (
     <div className="font-poppins">
       <Navbar />
-      <div className="p-2 lg:p-0">
+      <div className="p-2 lg:p-0 min-h-[calc(100vh-409px)]">
         <Outlet />
       </div>
       <Footer />

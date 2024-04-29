@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import updateImg from "./../../assets/images/update.svg";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 
 const UpdateCraft = () => {
   const loadedCraft = useLoaderData();
+
   const {
     _id,
     photo,
@@ -20,6 +21,7 @@ const UpdateCraft = () => {
   } = loadedCraft;
 
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const handleUpdate = (updateFormData) => {
     fetch(`https://drawing-den-server.vercel.app/crafts/${_id}`, {
@@ -35,6 +37,9 @@ const UpdateCraft = () => {
             icon: "success",
             confirmButtonText: "Okay",
           });
+          setTimeout(() => {
+            navigate("/myCraftList");
+          }, 3500);
         }
       });
   };

@@ -11,19 +11,21 @@ const Navbar = () => {
 
   const [theme, setTheme] = useState("light");
 
-  // theme
-  const handleDarkAndLightTheme = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      setTheme(localTheme);
     }
+  }, []);
+
+  const handleDarkAndLightTheme = (e) => {
+    const userTheme = e.target.checked ? "dark" : "light";
+    setTheme(userTheme);
+    localStorage.setItem("theme", userTheme);
   };
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const handleLogOut = () => {
