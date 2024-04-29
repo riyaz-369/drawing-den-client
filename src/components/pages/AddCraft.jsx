@@ -57,34 +57,24 @@ const AddCraft = () => {
               />
             </fieldset>
 
-            {/* select
-            <div className="join">
-              <div>
-                <input
-                  className="input input-bordered join-item input-sm"
-                  placeholder="Select your subcategory"
-                />
-              </div>
-              <select className="select select-sm select-bordered join-item">
-                <option className="" selected>
-                  Select
+            {/* select */}
+            <fieldset className="join col-span-2">
+              <select
+                className="select select-sm select-bordered join-item w-full"
+                {...register("subCategory", { required: true })}
+              >
+                <option value="" selected disabled>
+                  Select Subcategory
                 </option>
-                <option>Sci-fi</option>
-                <option>Drama</option>
-                <option>Action</option>
-                <option>Sci-fi</option>
-                <option>Drama</option>
-                <option>Action</option>
+                <option value="Landscape Painting">Landscape Painting</option>
+                <option value="Portrait Drawing">Portrait Drawing</option>
+                <option value="Watercolour Painting">
+                  Watercolour Painting
+                </option>
+                <option value="Oil Painting">Oil Painting</option>
+                <option value="Charcoal Sketching">Charcoal Sketching</option>
+                <option value="Cartoon Drawing">Cartoon Drawing</option>
               </select>
-            </div> */}
-            <fieldset>
-              <label className="">Subcategory Name</label>
-              <input
-                type="text"
-                placeholder="Enter your subcategory name"
-                className="w-full input input-sm text-sm border-gray-300"
-                {...register("subCategory")}
-              />
             </fieldset>
             <fieldset>
               <label className="">Details</label>
@@ -99,7 +89,7 @@ const AddCraft = () => {
               <label className="">Price</label>
               <input
                 type="text"
-                placeholder="Enter the price"
+                placeholder="Enter the price $"
                 className="w-full input input-sm text-sm border-gray-300"
                 {...register("price", { required: true })}
               />
@@ -119,20 +109,20 @@ const AddCraft = () => {
                 type="text"
                 placeholder="Yes or No"
                 className="w-full input input-sm text-sm border-gray-300"
-                {...register("customization")}
+                {...register("customization", { required: true })}
               />
             </fieldset>
             <fieldset>
               <label className="">Processing Time</label>
               <input
                 type="text"
-                placeholder="Enter processing time"
+                placeholder="1-2 weeks"
                 className="w-full input input-sm text-sm border-gray-300"
                 {...register("processTime")}
               />
             </fieldset>
             <fieldset>
-              <label className="">Stock</label>
+              <label className="">Product Status</label>
               <input
                 type="text"
                 placeholder="Enter your product status"
@@ -149,7 +139,7 @@ const AddCraft = () => {
                 {...register("email", { required: true })}
               />
             </fieldset>
-            <fieldset className="mb-2 col-span-2">
+            <fieldset className="mb-2">
               <label className="">Full Name</label>
               <input
                 type="text"

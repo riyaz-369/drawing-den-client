@@ -10,6 +10,7 @@ import MyCraftList from "../components/pages/MyCraftList";
 import ViewDetails from "../components/pages/ViewDetails";
 import UpdateCraft from "../components/pages/UpdateCraft";
 import PrivetRoute from "./PrivetRoute";
+import CategoryViewDetails from "../components/pages/CategoryViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -64,12 +65,18 @@ const router = createBrowserRouter([
           fetch(`https://drawing-den-server.vercel.app/crafts/${params.id}`),
       },
       {
-        path: "/myCraftList", //implement findMany using email: new obId(email)
+        path: "/myCraftList",
         element: (
           <PrivetRoute>
             <MyCraftList />
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/categoryDetails/:id",
+        element: <CategoryViewDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
     ],
   },

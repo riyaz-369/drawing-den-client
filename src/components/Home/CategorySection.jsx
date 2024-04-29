@@ -3,7 +3,7 @@ import CategoriesCard from "./CategoriesCard";
 
 const CategorySection = () => {
   const [categories, setCategories] = useState([]);
-  console.log(categories);
+
   useEffect(() => {
     fetch("https://drawing-den-server.vercel.app/category")
       .then((res) => res.json())

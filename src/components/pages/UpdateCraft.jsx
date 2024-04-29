@@ -59,7 +59,7 @@ const UpdateCraft = () => {
                 placeholder="https://image/1s8vQ2D/123.jpg"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={photo}
-                {...register("photo")}
+                {...register("photo", { required: true })}
               />
             </fieldset>
             <fieldset>
@@ -69,18 +69,26 @@ const UpdateCraft = () => {
                 placeholder="Enter your item name"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={itemName}
-                {...register("itemName")}
+                {...register("itemName", { required: true })}
               />
             </fieldset>
-            <fieldset>
-              <label className="">Subcategory Name</label>
-              <input
-                type="text"
-                placeholder="Enter your subcategory name"
-                className="w-full input input-sm text-sm border-gray-300"
+
+            {/* select */}
+            <fieldset className="join col-span-2">
+              <select
+                className="select select-sm select-bordered join-item w-full"
+                {...register("subCategory", { required: true })}
                 defaultValue={subCategory}
-                {...register("subCategory")}
-              />
+              >
+                <option value="Landscape Painting">Landscape Painting</option>
+                <option value="Portrait Drawing">Portrait Drawing</option>
+                <option value="Watercolour Painting">
+                  Watercolour Painting
+                </option>
+                <option value="Oil Painting">Oil Painting</option>
+                <option value="Charcoal Sketching">Charcoal Sketching</option>
+                <option value="Cartoon Drawing">Cartoon Drawing</option>
+              </select>
             </fieldset>
             <fieldset>
               <label className="">Details</label>
@@ -89,7 +97,7 @@ const UpdateCraft = () => {
                 placeholder="Enter short details"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={details}
-                {...register("details")}
+                {...register("details", { required: true })}
               />
             </fieldset>
             <fieldset>
@@ -99,7 +107,7 @@ const UpdateCraft = () => {
                 placeholder="Enter the price"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={price}
-                {...register("price")}
+                {...register("price", { required: true })}
               />
             </fieldset>
             <fieldset>
@@ -109,7 +117,7 @@ const UpdateCraft = () => {
                 placeholder="4.5"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={rating}
-                {...register("rating")}
+                {...register("rating", { required: true })}
               />
             </fieldset>
             <fieldset>
@@ -119,7 +127,7 @@ const UpdateCraft = () => {
                 placeholder="Yes or No"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={customization}
-                {...register("customization")}
+                {...register("customization", { required: true })}
               />
             </fieldset>
             <fieldset>
@@ -129,17 +137,17 @@ const UpdateCraft = () => {
                 placeholder="Enter processing time"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={processTime}
-                {...register("processTime")}
+                {...register("processTime", { required: true })}
               />
             </fieldset>
-            <fieldset className="col-span-2">
+            <fieldset className="">
               <label className="">Stock</label>
               <input
                 type="text"
                 placeholder="Enter your product status"
                 className="w-full input input-sm text-sm border-gray-300"
                 defaultValue={stock}
-                {...register("stock")}
+                {...register("stock", { required: true })}
               />
             </fieldset>
             <button

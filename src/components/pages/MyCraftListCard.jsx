@@ -13,8 +13,6 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
     customization,
     processTime,
     stock,
-    email,
-    fullName,
   } = myCraft;
 
   const handleDelete = (id) => {
