@@ -50,10 +50,8 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
         <img className="w-full" src={photo} alt={itemName} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          {itemName}
-          <div className="badge bg-violet-500 text-white">{subCategory}</div>
-        </h2>
+        <h2 className="card-title">{itemName}</h2>
+        <div className="badge bg-violet-500 text-white">{subCategory}</div>
         <p>{details}</p>
         <h3 className="text-3xl font-semibold">{price} $</h3>
         <div className="mt-5 md:mt-8 space-y-2 border-t-2 border-dashed">

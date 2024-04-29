@@ -23,7 +23,7 @@ const ViewDetails = () => {
     <div className=" max-w-7xl mx-auto my-16">
       <div className="card lg:card-side bg-base-100 border rounded-md">
         <figure className="w-full lg:w-1/2">
-          <img src={photo} alt={itemName} />
+          <img className="h-full" src={photo} alt={itemName} />
         </figure>
         <div className="card-body">
           <div className="space-y-4">
@@ -31,7 +31,7 @@ const ViewDetails = () => {
             <p>{details}</p>
             <p className="flex items-center gap-1">
               <MdOutlineCategory />
-              <span className="font-bold">Subcategory:</span> {subCategory} $
+              <span className="font-bold">Subcategory:</span> {subCategory}
             </p>
             <p className="flex items-center gap-1">
               <IoMdTime />

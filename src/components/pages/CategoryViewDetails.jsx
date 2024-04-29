@@ -7,16 +7,14 @@ import { useLoaderData } from "react-router-dom";
 const CategoryViewDetails = () => {
   const categoryDetails = useLoaderData();
 
-  console.log(categoryDetails);
-
   const { image, itemName, details, subCategory, processTime, rating, price } =
     categoryDetails;
 
   return (
-    <div className=" max-w-7xl mx-auto mt-16">
-      <div className="card lg:card-side bg-base-100 border rounded-md">
+    <div className="max-w-7xl mx-auto mt-16">
+      <div className="card lg:card-side border rounded-md bg-gray-50">
         <figure className="w-full lg:w-1/2">
-          <img src={image} alt={itemName} />
+          <img className="h-full" src={image} alt={itemName} />
         </figure>
         <div className="card-body">
           <div className="space-y-4">

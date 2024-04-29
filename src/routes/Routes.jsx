@@ -11,6 +11,7 @@ import ViewDetails from "../components/pages/ViewDetails";
 import UpdateCraft from "../components/pages/UpdateCraft";
 import PrivetRoute from "./PrivetRoute";
 import CategoryViewDetails from "../components/pages/CategoryViewDetails";
+import SpecificCategoriesItem from "../components/pages/SpecificCategoriesItem";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,14 @@ const router = createBrowserRouter([
         element: <CategoryViewDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.id}`),
+      },
+      {
+        path: "/subCategory/:subCategory",
+        element: <SpecificCategoriesItem />,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/craft-subcategory/${params.subCategory}`
+          ),
       },
     ],
   },
