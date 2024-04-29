@@ -144,7 +144,7 @@ const UpdateCraft = () => {
             </fieldset>
             <button
               onClick={handleUpdate}
-              className="my-secondary-btn col-span-2"
+              className="my-primary-btn col-span-2"
             >
               Update
             </button>

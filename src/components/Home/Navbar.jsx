@@ -12,12 +12,6 @@ const Navbar = () => {
 
   const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
-
   const handleDarkAndLightTheme = (e) => {
     if (e.target.checked) {
       setTheme("dark");
@@ -25,6 +19,12 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   const handleLogOut = () => {
     Swal.fire({
@@ -58,6 +58,7 @@ const Navbar = () => {
     <>
       <NavLink
         to="/"
+        title="Home"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         <IoHome />
@@ -65,6 +66,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="/allCraft"
+        title="All Art And Crafts"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         <FaExternalLinkAlt />
@@ -72,6 +74,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="/addCraft"
+        title="Add New Art and Craft"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         <MdOutlineLibraryAdd />
@@ -79,6 +82,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="/myCraftList"
+        title="Your Art and Craft"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         <IoList />
@@ -88,7 +92,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50  sticky top-0 z-50">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -115,7 +119,10 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link className="text-xl md:text-3xl font-semibold transition-all duration-300 hover:scale-105">
+          <Link
+            title="DrawingDen | Home"
+            className="text-xl md:text-3xl font-semibold transition-all duration-300 hover:scale-105"
+          >
             <h1 className="text-gradient">DrawingDen</h1>
           </Link>
         </div>
@@ -126,7 +133,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end space-x-2">
           {/* theme controller */}
-          <label className="swap swap-rotate">
+          <label title="Change Theme" className="swap swap-rotate">
             <input
               onChange={handleDarkAndLightTheme}
               type="checkbox"
@@ -154,7 +161,11 @@ const Navbar = () => {
           {user ? (
             <div className="flex gap-3">
               <NavLink to="/login">
-                <button onClick={handleLogOut} className="my-secondary-btn">
+                <button
+                  title="Log Out Your Account"
+                  onClick={handleLogOut}
+                  className="my-secondary-btn"
+                >
                   <CiLogout />
                   Log Out
                 </button>
