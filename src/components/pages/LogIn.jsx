@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import signUpImg from "./../../assets/images/sign-up.svg";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
@@ -9,6 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
+
+import lottieLogIn from "./../../assets/images/login.json";
+import Lottie from "lottie-react";
 
 const LogIn = () => {
   const { logInUser, logInWithGoogle, gitHubLogIn } = useContext(AuthContext);
@@ -98,8 +100,9 @@ const LogIn = () => {
       <Helmet>
         <title>DrawingDen | Login</title>
       </Helmet>
-      <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
+      <div className="max-w-7xl mx-auto lg:flex justify-between items-center">
         <div className="p-4 lg:p-0 lg:pb-8 w-full lg:w-1/3 space-y-3">
+          <h1 className="text-3xl font-semibold pb-5">Login Your Account</h1>
           <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block">
@@ -174,10 +177,7 @@ const LogIn = () => {
           </p>
         </div>
         <div className="hidden lg:flex lg:flex-col">
-          <h1 className="text-3xl pl-28 font-semibold pb-4 pt-8">
-            Login Your Account
-          </h1>
-          <img className="w-[600px]" src={signUpImg} alt="" />
+          <Lottie className="w-[600px]" animationData={lottieLogIn}></Lottie>
         </div>
       </div>
       <ToastContainer position="top-center" />

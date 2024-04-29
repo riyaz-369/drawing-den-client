@@ -8,6 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import lotteRegister from "./../../assets/images/register.json";
+import Lottie from "lottie-react";
 
 const Register = () => {
   const { createUser, userProfile } = useContext(AuthContext);
@@ -74,6 +76,9 @@ const Register = () => {
         </Helmet>
         <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
           <div className="p-4 lg:p-0 lg:py-8 w-full lg:w-1/3 space-y-3">
+            <h1 className="text-3xl font-semibold mb-6">
+              Register Your Account
+            </h1>
             <form onSubmit={handleSubmit(handleRegister)} className="space-y-6">
               <div className="space-y-1 text-sm">
                 <label className="block">Full Name</label>
@@ -143,10 +148,11 @@ const Register = () => {
             </p>
           </div>
           <div className="hidden lg:flex lg:flex-col">
-            <h1 className="text-3xl font-semibold mb-6">
-              Register Your Account
-            </h1>
-            <img className="lg:w-[600px]" src={registerImg} />
+            <Lottie
+              className="lg:w-[600px]"
+              animationData={lotteRegister}
+            ></Lottie>
+            {/* <img  src={registerImg} /> */}
           </div>
         </div>
       </section>
