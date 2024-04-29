@@ -3,6 +3,7 @@ import addImage from "./../../assets/images/add.svg";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { useNavigate } from "react-router-dom";
 
 const AddCraft = () => {
   const { register, handleSubmit } = useForm();
@@ -10,6 +11,7 @@ const AddCraft = () => {
   const { user } = useContext(AuthContext);
   const email = user.reloadUserInfo.email;
   const displayName = user.reloadUserInfo.displayName;
+  const navigate = useNavigate();
 
   const handleAddCraft = (formInfo) => {
     fetch("https://drawing-den-server.vercel.app/crafts", {
@@ -19,23 +21,25 @@ const AddCraft = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Item Added Successfully !",
             icon: "success",
             confirmButtonText: "Okay",
           });
+          setTimeout(() => {
+            navigate("/myCraftList");
+          }, 3500);
         }
       });
   };
 
   return (
-    <div className="my-24 rounded-md bg-gray-50">
+    <div className="my-4 md:my-8 lg:my-16">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12 justify-between">
         <form
           onSubmit={handleSubmit(handleAddCraft)}
-          className="w-full space-y-4 p-12 "
+          className="w-full space-y-4 lg:p-12 "
         >
           <div className="grid grid-cols-2 gap-4">
             <fieldset>

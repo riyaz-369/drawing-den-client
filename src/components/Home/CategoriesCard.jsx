@@ -6,7 +6,7 @@ const CategoriesCard = ({ category }) => {
 
   return (
     <Link>
-      <div className="card shadow-md hover:shadow-xl rounded-md transition-all hover:scale-105 duration-300">
+      <div className="card shadow-md transition-all lg:hover:-translate-y-4 duration-300 rounded-md">
         <Link to={`/subCategory/${subCategory}`}>
           <div className="hover:underline">
             <figure className="h-48">

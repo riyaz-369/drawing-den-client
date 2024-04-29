@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
+import { MdProductionQuantityLimits } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
   const {
@@ -55,23 +57,27 @@ const MyCraftListCard = ({ myCraft, myCrafts, setMyCrafts }) => {
         <div className="badge bg-violet-500 text-white">{subCategory}</div>
         <p>{details}</p>
         <h3 className="text-3xl font-semibold">{price} $</h3>
+        <p className="flex items-center gap-1">
+          <MdProductionQuantityLimits />
+          <span className="font-semibold">Stock:</span>{" "}
+          <span className="text-orange-500 capitalize">{stock}</span>
+        </p>
+        <p className="flex items-center gap-1">
+          <FaEdit />
+          <span className="font-semibold">Customization:</span>{" "}
+          <span className="text-orange-500 capitalize">{customization}</span>
+        </p>
         <div className="mt-5 md:mt-8 space-y-2 border-t-2 border-dashed">
           <div className="overflow-x-auto">
             <table className="table">
-              {/* head */}
               <thead>
                 <tr>
-                  <th>Stock</th>
-                  <th>Customizable</th>
                   <th>Processing Time</th>
                   <th>Rating (of 5)</th>
                 </tr>
               </thead>
               <tbody>
-                {/* row 1 */}
                 <tr>
-                  <td>{stock}</td>
-                  <td>{customization}</td>
                   <td>{processTime}</td>
                   <td>{rating}</td>
                 </tr>

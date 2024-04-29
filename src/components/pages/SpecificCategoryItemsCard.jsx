@@ -26,24 +26,26 @@ const SpecificCategoryItemsCard = ({ categoryItem }) => {
       <div className="space-y-2 card-body">
         <h2 className="card-title">{itemName}</h2>
         <p className="text-sm md:text-base">{details}</p>
-        <p className="flex items-center gap-1">
+        <p className="flex items-center gap-1 text-sm md:text-base">
           <MdOutlineCategory />
           <span className="font-bold">Subcategory:</span>{" "}
-          <span className="badge bg-violet-500 text-white">{subCategory}</span>
+          <span className="badge-sm rounded-full bg-violet-500 text-white">
+            {subCategory}
+          </span>
         </p>
-        <p className="flex items-center gap-1">
+        <p className="flex items-center gap-1 text-sm md:text-base">
           <IoMdTime />
           <span className="font-bold">Processing Time:</span> {processTime}
         </p>
-        <p className="flex items-center gap-1">
+        <p className="flex items-center gap-1 text-sm md:text-base">
           <FaRegStar />
           <span className="font-bold">Rating:</span> {rating}
         </p>
-        <p className="flex items-center gap-1">
+        <p className="flex items-center gap-1 text-sm md:text-base">
           <IoPricetagsOutline />
           <span className="font-bold">Price:</span> {price} $
         </p>
-        <p className="flex items-center gap-1">
+        <p className="flex items-center gap-1 text-sm md:text-base">
           <MdProductionQuantityLimits />
           <span className="font-bold">Stock:</span>{" "}
           <span className="text-orange-500 capitalize">{stock}</span>

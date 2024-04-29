@@ -32,10 +32,10 @@ const Banner = () => {
         modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
       >
         <SwiperSlide>
-          <section className="dark:bg-gray-50 dark:text-gray-800">
+          <section className="">
             <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
-                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                <h1 className="text-2xl md:text-3xl font-bold leading-none lg:text-5xl">
                   Inspiration
                   <span className="dark:text-violet-600">Everywhere</span>
                   <br />
@@ -60,10 +60,10 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-50 dark:text-gray-800">
+          <section className="">
             <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
-                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                <h1 className="text-2xl md:text-3xl font-bold leading-none lg:text-5xl">
                   Sketching Dreams
                   <span className="dark:text-violet-600">Where</span>
                   <br />
@@ -88,10 +88,10 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-50 dark:text-gray-800">
+          <section className="">
             <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
-                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                <h1 className="text-2xl md:text-3xl font-bold leading-none lg:text-5xl">
                   Visionaries Unite
                   <span className="dark:text-violet-600">Discover</span>
                   <br />
@@ -116,10 +116,10 @@ const Banner = () => {
           </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="dark:bg-gray-50 dark:text-gray-800">
+          <section className="">
             <div className="container max-w-7xl mx-auto flex flex-col justify-center sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left p-6 lg:p-0">
-                <h1 className="text-3xl font-bold leading-none lg:text-5xl">
+                <h1 className="text-2xl md:text-3xl font-bold leading-none lg:text-5xl">
                   Worlds Collide
                   <span className="dark:text-violet-600">Where</span>
                   <br />

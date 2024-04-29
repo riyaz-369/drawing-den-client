@@ -25,7 +25,7 @@ const CategorySection = () => {
           collection <br /> of captivating artworks.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {categories.map((category) => (
           <CategoriesCard key={category._id} category={category} />
         ))}

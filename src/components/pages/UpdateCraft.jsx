@@ -39,18 +39,12 @@ const UpdateCraft = () => {
   };
 
   return (
-    <div className="my-24  bg-gray-50">
-      <div className="max-w-7xl mx-auto flex gap-12 justify-between rounded-md">
+    <div className="my-4 md:my-8 lg:my-16">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12 justify-between">
         <form
           onSubmit={handleSubmit(handleUpdate)}
-          className="w-full space-y-4 p-6"
+          className="w-full space-y-4 lg:p-6"
         >
-          <h3 className="text-3xl font-semibold">Update Your Art and Crafts</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            earum dignissimos nulla rerum vitae corrupti eveniet. Officia, vitae
-            eveniet
-          </p>
           <div className="grid grid-cols-2 gap-4">
             <fieldset>
               <label className="">Photo</label>
@@ -158,8 +152,11 @@ const UpdateCraft = () => {
             </button>
           </div>
         </form>
-        <div className="border-red-800 w-[1100px]">
-          <img className="pt-36" src={updateImg} />
+        <div className="lg:w-[1100px]">
+          <h3 className="text-2xl md:text-2xl lg:text-3xl font-semibold">
+            Update Your Art and Crafts
+          </h3>
+          <img className="pt-6" src={updateImg} />
         </div>
       </div>
     </div>

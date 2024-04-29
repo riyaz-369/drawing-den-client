@@ -5,10 +5,10 @@ const Footer = () => {
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div>
             <a className="flex space-x-3 justify-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
+              <div className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full dark:bg-violet-600">
                 <img src="/logos.png" />
               </div>
-              <span className="self-center text-3xl font-semibold">
+              <span className="self-center text-2xl lg:text-3xl font-semibold">
                 DrawingDen
               </span>
             </a>

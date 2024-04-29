@@ -93,7 +93,7 @@ const LogIn = () => {
   };
 
   return (
-    <section className=" bg-gray-50">
+    <section className="">
       <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
         <div className="p-4 lg:p-0 lg:pb-8 w-full lg:w-1/3 space-y-3">
           <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">

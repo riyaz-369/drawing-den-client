@@ -1,8 +1,8 @@
 const FAQ = () => {
   return (
     <section className="">
-      <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-        <h2 className="text-2xl font-semibold sm:text-4xl text-center">
+      <div className="container mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold lg:text-4xl text-center">
           Frequently Asked Questions
         </h2>
         <p className="mt-4 mb-8 dark:text-gray-600 text-center">

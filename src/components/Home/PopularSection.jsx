@@ -1,7 +1,7 @@
 const PopularSection = () => {
   return (
     <section className="">
-      <div className="container p-6 mx-auto space-y-8">
+      <div className="container mx-auto space-y-8">
         <div className="space-y-2 text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
             Popular Right Now
@@ -14,7 +14,7 @@ const PopularSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4">
+          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4 duration-300">
             <a>
               <img
                 className="object-cover w-full h-52"
@@ -35,7 +35,7 @@ const PopularSection = () => {
               </div>
             </div>
           </article>
-          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4">
+          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4 duration-300">
             <a>
               <img
                 className="object-cover w-full h-52"
@@ -56,7 +56,7 @@ const PopularSection = () => {
               </div>
             </div>
           </article>
-          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4">
+          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4 duration-300">
             <a>
               <img
                 className="object-cover w-full h-52"
@@ -77,7 +77,7 @@ const PopularSection = () => {
               </div>
             </div>
           </article>
-          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4">
+          <article className="flex flex-col shadow-md transition-all lg:hover:-translate-y-4 duration-300">
             <a>
               <img
                 className="object-cover w-full h-52"

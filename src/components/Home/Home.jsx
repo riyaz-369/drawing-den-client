@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="max-w-7xl mx-auto my-24">
+      <div className="max-w-7xl mx-auto my-24 p-2 lg:p-0">
         <CraftItems />
         <CategorySection />
-        <div className="my-16">
+        <div className="my-16 md:mt-24">
           <PopularSection />
         </div>
         <div>
