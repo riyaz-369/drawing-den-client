@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerImg from "./../../assets/images/register.svg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
@@ -11,6 +11,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const { createUser, userProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,17 +33,8 @@ const Register = () => {
       return;
     } else {
       createUser(email, password)
-        .then((result) => {
-          console.log(result.user);
-
-          userProfile(fullName, photoUrl)
-            .then(() => {
-              // console.log(result);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
+        .then(() => {
+          userProfile(fullName, photoUrl);
           fetch(" https://drawing-den-server.vercel.app/users", {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -50,18 +42,25 @@ const Register = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
               if (data.insertedId) {
                 Swal.fire({
                   title: "Registration Successful !",
                   icon: "success",
                   confirmButtonText: "Okay",
                 });
+                setTimeout(() => {
+                  navigate("/");
+                }, 3000);
               }
             });
         })
         .catch((error) => {
-          console.error(error.message);
+          const errorMsg = error.code
+            .split("-")
+            .join(" ")
+            .slice(5, error.code.length);
+          const err = errorMsg.charAt(0).toUpperCase() + errorMsg.slice(1);
+          toast.error(`This ${err}`);
         });
     }
   };

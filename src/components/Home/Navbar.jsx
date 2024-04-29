@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
-import { CiLogin, CiLogout } from "react-icons/ci";
-import { MdAppRegistration, MdOutlineLibraryAdd } from "react-icons/md";
+import { MdOutlineLibraryAdd } from "react-icons/md";
 import { IoHome, IoList } from "react-icons/io5";
 import Swal from "sweetalert2";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -38,11 +37,14 @@ const Navbar = () => {
       if (resulted.isConfirmed) {
         logOut()
           .then(() => {})
-          .catch((error) => {
-            console.log(error);
+          .catch(() => {
+            Swal.fire({
+              title: "Something went wrong !",
+              icon: "warning",
+            });
           });
         Swal.fire({
-          title: "Successfully Log Out !",
+          title: "Successfully log out !",
           icon: "success",
         });
       }
@@ -166,7 +168,6 @@ const Navbar = () => {
                   onClick={handleLogOut}
                   className="my-secondary-btn"
                 >
-                  <CiLogout />
                   Log Out
                 </button>
               </NavLink>
@@ -184,11 +185,9 @@ const Navbar = () => {
           ) : (
             <div className="space-x-2">
               <Link to="/logIn" className="my-secondary-btn">
-                <CiLogin />
                 Log In
               </Link>
               <Link to="/register" className="my-primary-btn">
-                <MdAppRegistration />
                 Register
               </Link>
             </div>

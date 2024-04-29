@@ -19,8 +19,8 @@ const AllCraft = () => {
             </tr>
           </thead>
           <tbody>
-            {allCraft.map((craft) => (
-              <AllCraftTable key={craft._id} craft={craft} />
+            {allCraft.map((craft, idx) => (
+              <AllCraftTable key={craft._id} craft={craft} idx={idx} />
             ))}
           </tbody>
         </table>

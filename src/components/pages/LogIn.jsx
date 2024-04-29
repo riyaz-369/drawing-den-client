@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import signUpImg from "./../../assets/images/sign-up.svg";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
@@ -14,6 +14,8 @@ const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogIn = (logInFormData) => {
     const { email, password } = logInFormData;
@@ -29,16 +31,20 @@ const LogIn = () => {
       return;
     } else {
       logInUser(email, password)
-        .then((result) => {
-          console.log(result.user);
+        .then(() => {
           Swal.fire({
             title: "Login Successful !",
             icon: "success",
             confirmButtonText: "Okay",
           });
+          setTimeout(() => {
+            navigate(location?.state ? location.state : "/");
+          }, 3500);
         })
         .catch((error) => {
-          console.log(error.message);
+          const errorMsg = error.code.slice(5, 12);
+          const err = errorMsg.charAt(0).toUpperCase() + errorMsg.slice(1);
+          toast.error(`${err} account or password`);
         });
       return;
     }
@@ -52,9 +58,16 @@ const LogIn = () => {
           icon: "success",
           confirmButtonText: "Okay",
         });
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 3500);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        Swal.fire({
+          title: "Something went wrong !",
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
       });
   };
 
@@ -66,9 +79,16 @@ const LogIn = () => {
           icon: "success",
           confirmButtonText: "Okay",
         });
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 3500);
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch(() => {
+        Swal.fire({
+          title: "Something went wrong !",
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
       });
   };
 

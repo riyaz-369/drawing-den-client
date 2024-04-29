@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const AllCraftTable = ({ craft }) => {
+const AllCraftTable = ({ craft, idx }) => {
   const { _id, itemName, subCategory, rating, processTime } = craft;
 
   return (
     <tr className="hover space-y-12">
-      <th>1</th>
+      <th>{idx + 1}</th>
       <td>{itemName}</td>
       <td>{subCategory}</td>
       <td>{processTime}</td>
@@ -23,3 +24,8 @@ const AllCraftTable = ({ craft }) => {
 };
 
 export default AllCraftTable;
+
+AllCraftTable.propTypes = {
+  craft: PropTypes.object,
+  idx: PropTypes.number,
+};

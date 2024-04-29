@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .my-secondary-btn {
-  @apply btn bg-orange-400 hover:bg-orange-500 rounded-full px-2 lg:px-4 text-sm lg:text-base text-white btn-sm lg:btn-md;
+  @apply btn bg-orange-400 hover:bg-orange-500 rounded-full px-2 lg:px-6 text-sm lg:text-base text-white btn-sm lg:btn-md;
 }
 
 .my-primary-btn {
