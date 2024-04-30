@@ -1,9 +1,18 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const FAQ = () => {
   return (
     <section className="">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold lg:text-4xl text-center">
-          Frequently Asked Questions
+          <Typewriter
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={20}
+            delaySpeed={1000}
+            words={["Frequently Asked Questions"]}
+          ></Typewriter>
         </h2>
         <p className="mt-4 mb-8 dark:text-gray-600 text-center">
           Explore our Frequently Asked Questions to find helpful information and

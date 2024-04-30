@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 
 import lottieLogIn from "./../../assets/images/login.json";
 import Lottie from "lottie-react";
+import { Typewriter } from "react-simple-typewriter";
 
 const LogIn = () => {
   const { logInUser, logInWithGoogle, gitHubLogIn } = useContext(AuthContext);
@@ -102,7 +103,15 @@ const LogIn = () => {
       </Helmet>
       <div className="max-w-7xl mx-auto lg:flex justify-between items-center">
         <div className="p-4 lg:p-0 lg:pb-8 w-full lg:w-1/3 space-y-3">
-          <h1 className="text-3xl font-semibold pb-5">Login Your Account</h1>
+          <h1 className="text-3xl font-semibold pb-5">
+            <Typewriter
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              delaySpeed={1000}
+              words={["Login Your Account"]}
+            ></Typewriter>
+          </h1>
           <form onSubmit={handleSubmit(handleLogIn)} className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block">

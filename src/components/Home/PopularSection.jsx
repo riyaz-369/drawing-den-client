@@ -1,10 +1,18 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const PopularSection = () => {
   return (
     <section className="">
       <div className="container mx-auto space-y-8">
         <div className="space-y-2 text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
-            Popular Right Now
+            <Typewriter
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              delaySpeed={1000}
+              words={["Popular Right Now"]}
+            ></Typewriter>
           </h2>
           <p className="text-sm lg:text-base">
             Discover the latest trends and most talked-about artworks

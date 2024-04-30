@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ArtAndCraftCard from "./ArtAndCraftCard";
+import { Typewriter } from "react-simple-typewriter";
 
 const CraftItems = () => {
   const [artAndCrafts, setArtAndCraft] = useState([]);
@@ -16,7 +17,13 @@ const CraftItems = () => {
     <div>
       <div className="text-center mb-16 space-y-2">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-normal">
-          Crafted Creations Unveiling <br /> Our Artistic Endeavors
+          <Typewriter
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            delaySpeed={1000}
+            words={["Crafted Creations Unveiling", "Our Artistic Endeavors"]}
+          ></Typewriter>
         </h2>
         <p className="text-sm md:text-base">
           Indulge in a showcase of our meticulously crafted creations, each a

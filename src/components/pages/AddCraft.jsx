@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Typewriter } from "react-simple-typewriter";
 
 const AddCraft = () => {
   const { register, handleSubmit } = useForm();
@@ -161,7 +162,13 @@ const AddCraft = () => {
         </form>
         <div className="lg:w-[1100px] text-center pt-12">
           <h3 className="text-2xl md:text-2xl lg:text-3xl font-semibold">
-            Add New Art and Crafts
+            <Typewriter
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              delaySpeed={1000}
+              words={[" Add New Art and Crafts"]}
+            ></Typewriter>
           </h3>
           <img src={addImage} />
         </div>

@@ -10,6 +10,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import lotteRegister from "./../../assets/images/register.json";
 import Lottie from "lottie-react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
   const { createUser, userProfile } = useContext(AuthContext);
@@ -77,7 +78,13 @@ const Register = () => {
         <div className="max-w-7xl mx-auto my-12 lg:flex justify-between items-end">
           <div className="p-4 lg:p-0 lg:py-8 w-full lg:w-1/3 space-y-3">
             <h1 className="text-3xl font-semibold mb-6">
-              Register Your Account
+              <Typewriter
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                delaySpeed={1000}
+                words={["Register Your Account"]}
+              ></Typewriter>
             </h1>
             <form onSubmit={handleSubmit(handleRegister)} className="space-y-6">
               <div className="space-y-1 text-sm">
@@ -152,7 +159,6 @@ const Register = () => {
               className="lg:w-[600px]"
               animationData={lotteRegister}
             ></Lottie>
-            {/* <img  src={registerImg} /> */}
           </div>
         </div>
       </section>

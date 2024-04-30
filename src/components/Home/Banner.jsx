@@ -6,6 +6,7 @@ import banner1 from "./../../assets/banner/banner1.png";
 import banner2 from "./../../assets/banner/banner2.svg";
 import banner3 from "./../../assets/banner/banner3.png";
 import banner4 from "./../../assets/banner/banner4.svg";
+
 import {
   Autoplay,
   Keyboard,
