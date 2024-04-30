@@ -48,7 +48,7 @@ const Banner = () => {
                   explore the art of sketching!
                 </p>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                  <a className="banner-btn">Explore</a>
+                  <button className="banner-btn">Explore</button>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

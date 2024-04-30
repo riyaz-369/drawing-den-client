@@ -171,13 +171,13 @@ const Navbar = () => {
                 </button>
               </NavLink>
               <span
-                className="tooltip tooltip-bottom"
+                className="tooltip tooltip-left"
                 data-tip={user.displayName}
               >
                 <img
                   src={user.photoURL}
                   alt={user.displayName}
-                  className="w-10 h-10 md:w-11 md:h-11 rounded-full ring ring-offset-1 ring-orange-400"
+                  className="w-9 h-9 md:w-11 md:h-11 rounded-full ring ring-offset-1 ring-orange-400"
                 />
               </span>
             </div>
